@@ -1,6 +1,9 @@
-package main
+package Unit_test
 
-import "testing"
+import (
+	"github.com/shuklarituparn/Fuzzing"
+	"testing"
+)
 
 func TestReverse(t *testing.T) {
 	testCases := []struct {
@@ -12,7 +15,7 @@ func TestReverse(t *testing.T) {
 		{"!12345", "54321!"},
 	}
 	for _, tc := range testCases {
-		rev := reverse(tc.in)
+		rev := main.reverse(tc.in)
 		if rev != tc.want {
 			t.Errorf("Reverse: %q, want: %q", rev, tc.want)
 		}
